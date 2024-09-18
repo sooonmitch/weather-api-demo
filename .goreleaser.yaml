@@ -1,0 +1,15 @@
+version: 2
+project_name: "Weather API Demo"
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - skip: true
+snapshot:
+  name_template: "{{ .Tag }}-snapshot"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
